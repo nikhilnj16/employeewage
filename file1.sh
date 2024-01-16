@@ -15,11 +15,13 @@ fulldayhour=8
 case $x in
        1) dailywage=$(($wageperhour*$fulldayhour))
         ;;
-       2) echo "parttimedays"
-          read parttimedays
-          dailywage=$(($parttimedays*$fulldayhour))
+       2) echo "parttimewage"
+          read parttimewage
+          dailywage=$(($parttimewage*$fulldayhour))
        ;;
 esac
-echo $dailywage
+monthdays=30
+wagepermonth=$(($dailywage*$monthdays))
+echo $wagepermonth
 
 

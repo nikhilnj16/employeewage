@@ -7,13 +7,19 @@ else
 echo "Absent"
 fi
 
+
+echo "fulldayworking enter 1\nparttimeworking enter 2" 
+read x
 wageperhour=20
 fulldayhour=8
-dailywage=$((wageperhour*fulldayhour))
+case $x in
+       1) dailywage=$(($wageperhour*$fulldayhour))
+        ;;
+       2) echo "parttimedays"
+          read parttimedays
+          dailywage=$(($parttimedays*$fulldayhour))
+       ;;
+esac
 echo $dailywage
 
-echo "parttimedays"
-read x
-parttimehour=8
-parttimewage=$(($x*$parttimehour))
-echo $parttimewage
+
